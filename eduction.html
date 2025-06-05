@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Education Timeline</title>
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"/>
+  <!-- Boxicons CSS -->
+  <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet"/>
+
+  <style>
+    body {
+      background-color: #1a1a1a;
+      color: #fff;
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding-top: 70px; /* Space for nav */
+    }
+
+    /* Transparent, right-aligned nav */
+    .nav-menu {
+      background: transparent;
+      padding: 15px 30px;
+      position: fixed;
+      top: 0;
+      right: 0;
+      width: 100%;
+      z-index: 999;
+    }
+
+    .nav-menu ul {
+      list-style: none;
+      display: flex;
+      justify-content: flex-end;
+      margin: 0;
+      padding: 0;
+    }
+
+    .nav-menu ul li {
+      margin-left: 20px;
+    }
+
+    .nav-menu ul li a {
+      color: #fff; /* White text */
+      text-decoration: none;
+      font-weight: bold;
+      padding: 6px 12px;
+      border-radius: 8px;
+      transition: all 0.3s ease;
+    }
+
+    .nav-menu ul li a:hover,
+    .nav-menu ul li a:focus {
+      background-color: #00ff88;
+      color: #000;
+    }
+
+    .section-title {
+      text-align: center;
+      margin-bottom: 50px;
+    }
+
+    .section-title h2 {
+      font-size: 2.5rem;
+      font-weight: bold;
+      color: #fff;
+    }
+
+    .timeline {
+      position: relative;
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 20px 0;
+    }
+
+    .timeline::before {
+      content: '';
+      position: absolute;
+      width: 4px;
+      background-color: #00b7ff;
+      top: 0;
+      bottom: 0;
+      left: 50%;
+      margin-left: -2px;
+    }
+
+    .timeline-item {
+      padding: 10px 40px;
+      position: relative;
+      width: 50%;
+      box-sizing: border-box;
+    }
+
+    .timeline-item::before {
+      content: '';
+      position: absolute;
+      width: 20px;
+      height: 20px;
+      background-color: #ff5e5e;
+      border-radius: 50%;
+      top: 15px;
+      z-index: 1;
+    }
+
+    .timeline-item:nth-child(odd) {
+      left: 0;
+      text-align: right;
+    }
+
+    .timeline-item:nth-child(odd)::before {
+      right: -10px;
+    }
+
+    .timeline-item:nth-child(even) {
+      left: 50%;
+      text-align: left;
+    }
+
+    .timeline-item:nth-child(even)::before {
+      left: -10px;
+    }
+
+    .timeline-content {
+      padding: 20px;
+      background-color: #333;
+      border-radius: 6px;
+      position: relative;
+    }
+
+    .timeline-content h4 {
+      margin: 0 0 5px;
+      font-size: 1.25rem;
+      color: #fff;
+    }
+
+    .timeline-content p {
+      margin: 5px 0;
+      font-size: 1rem;
+      color: #ccc;
+    }
+
+    .timeline-date {
+      position: absolute;
+      top: 10px;
+      font-size: 0.9rem;
+      color: #00b7ff;
+      background-color: #1a1a1a;
+      padding: 2px 8px;
+      border-radius: 12px;
+    }
+
+    .timeline-item:nth-child(odd) .timeline-date {
+      right: -100px;
+    }
+
+    .timeline-item:nth-child(even) .timeline-date {
+      left: -100px;
+    }
+
+    /* Footer */
+    .footer {
+      text-align: center;
+      padding: 30px 20px;
+      background-color: #111;
+      margin-top: 60px;
+    }
+
+    .footer h3 {
+      color: #fff;
+      margin-bottom: 15px;
+    }
+
+    .social-icons a {
+      margin: 0 10px;
+      color: #00b7ff;
+      font-size: 24px;
+      transition: color 0.3s;
+    }
+
+    .social-icons a:hover {
+      color: #ff5e5e;
+    }
+
+    .footer p {
+      margin-top: 15px;
+      color: #888;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navigation Menu -->
+  <nav class="nav-menu d-none d-lg-block">
+    <ul>
+      <li class="active"><a href="index.html"><span>Home</span></a></li>
+      <li><a href="aboutme.html"><span>About</span></a></li>
+      <li><a href="eduction.html"><span>Education</span></a></li>
+      <li><a href="exprince.html"><span>Experience</span></a></li>
+      <li><a href="project.html"><span>Projects</span></a></li>
+      <li><a href="skill.html"><span>Skills</span></a></li>
+      <li><a href="https://drive.google.com/file/d/1pT-Nk6AxY9ZOWBizuDb4htA3IiUF_fSe/view?usp=sharing" target="_blank"><span>Resume</span></a></li>
+      <li><a href="contact.html"><span>Contact</span></a></li>
+    </ul>
+  </nav>
+
+  <!-- Education Timeline Section -->
+  <section id="education" class="py-5">
+    <div class="container">
+      <div class="section-title">
+        <h2>Education</h2>
+      </div>
+      <div class="timeline">
+        <div class="timeline-item">
+          <div class="timeline-date">Apr 20XX</div>
+          <div class="timeline-content">
+            <h4>High School</h4>
+            <p>ABC School, City</p>
+            <p>Marks - 95%</p>
+          </div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-date">Jun 20XX - Jun 20YY</div>
+          <div class="timeline-content">
+            <h4>B.E, Computer Science</h4>
+            <p>XYZ University, City</p>
+            <p>CGPA - 9.5</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <div class="footer">
+    <h3>Yaseen Bepari</h3>
+    <div class="social-icons">
+      <a href="https://www.linkedin.com/in/yaseen-bepari-18a70725b/" target="_blank"><i class="bx bxl-linkedin"></i></a>
+      <a href="https://github.com/YaseenBepari" target="_blank"><i class="bx bxl-github"></i></a>
+      <a href="mailto:yaseenbepari2002@gmail.com" target="_blank"><i class="bx bx-envelope"></i></a>
+      <a href="https://leetcode.com/u/your-profile/" target="_blank"><i class="bx bx-code-alt"></i></a>
+    </div>
+    <p>© 2025 Yaseen Bepari. All rights reserved.</p>
+  </div>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+  <title>Algorithm Visualizer</title>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Poppins:400,500,600&display=swap" rel="stylesheet" />
+  <link href="../assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      margin: 0;
+      padding: 0;
+      height: 100vh;
+      overflow: hidden;
+      background: #f4f6f8;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .container-box {
+      background: #fff;
+      padding: 20px;
+      max-width: 900px;
+      width: 100%;
+      border-radius: 15px;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    }
+
+    .image-carousel {
+      display: flex;
+      overflow-x: auto;
+      gap: 10px;
+      border-radius: 10px;
+      margin-bottom: 15px;
+      scroll-behavior: smooth;
+    }
+
+    .image-carousel::-webkit-scrollbar {
+      height: 8px;
+    }
+
+    .image-carousel::-webkit-scrollbar-thumb {
+      background: #12d640;
+      border-radius: 10px;
+    }
+
+    .carousel-image {
+      flex: 0 0 auto;
+      height: 200px;
+      width: 100%;
+      max-width: 280px;
+      border-radius: 10px;
+      object-fit: cover;
+    }
+
+    h2 {
+      font-size: 20px;
+      color: #12d640;
+      margin-bottom: 10px;
+    }
+
+    .project-buttons {
+      margin-bottom: 10px;
+    }
+
+    .project-buttons a {
+      margin-right: 10px;
+      padding: 8px 18px;
+      font-size: 14px;
+      border-radius: 25px;
+      background-color: #12d640;
+      color: white;
+      text-decoration: none;
+      font-weight: 500;
+      transition: background 0.3s;
+    }
+
+    .project-buttons a:hover {
+      background-color: #0fa14d;
+    }
+
+    ul {
+      padding-left: 18px;
+      font-size: 13px;
+      margin-bottom: 10px;
+    }
+
+    p {
+      font-size: 13px;
+      margin-bottom: 6px;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container-box">
+    <!-- Scrollable Image Carousel -->
+    <div class="image-carousel">
+      <img src="../assets/img/project/algorithm1.png" class="carousel-image" alt="Algorithm Visualizer Screenshot 1" />
+      <img src="../assets/img/project/algorithm2.png" class="carousel-image" alt="Algorithm Visualizer Screenshot 2" />
+      <img src="../assets/img/project/algorithm3.png" class="carousel-image" alt="Algorithm Visualizer Screenshot 3" />
+    </div>
+
+    <!-- Title -->
+    <h2>Algorithm Visualizer</h2>
+
+    <!-- Buttons -->
+    <div class="project-buttons">
+      <a href="https://github.com/YaseenBepari/Algorithm-Visualizer-" target="_blank">📂 GitHub</a>
+    </div>
+
+    <!-- Tech Stack -->
+    <ul>
+      <li><strong>Tech Stack</strong>: JavaScript, React, CSS</li>
+    </ul>
+
+    <!-- Description -->
+    <p>
+      Interactive visualizations for common algorithms to help users understand how they work step-by-step.
+    </p>
+    <p>
+      Supports sorting algorithms, pathfinding algorithms, and more, with intuitive animations.
+    </p>
+    <p>
+      Built with React for a responsive and dynamic UI.
+    </p>
+  </div>
+</body>
+</html>

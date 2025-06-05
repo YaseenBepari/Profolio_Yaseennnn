@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no" />
+  <title>Namma Agri - Crop Yield Prediction</title>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Poppins:400,500,600&display=swap" rel="stylesheet" />
+  <link href="../assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      margin: 0;
+      padding: 0;
+      min-height: 100vh;
+      background: #f4f6f8;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .container-box {
+      background: #fff;
+      padding: 15px;
+      max-width: 900px;
+      width: 95%;
+      border-radius: 15px;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+      box-sizing: border-box;
+    }
+
+    .image-carousel {
+      display: flex;
+      overflow-x: auto;
+      gap: 10px;
+      border-radius: 10px;
+      margin-bottom: 15px;
+      scroll-behavior: smooth;
+      -webkit-overflow-scrolling: touch;
+      width: 100%;
+      flex-wrap: nowrap; /* Prevent wrapping */
+    }
+
+    .image-carousel::-webkit-scrollbar {
+      height: 8px;
+    }
+
+    .image-carousel::-webkit-scrollbar-thumb {
+      background: #12d640;
+      border-radius: 10px;
+    }
+
+    .carousel-image {
+      flex: 0 0 auto;
+      width: 280px; /* Default width for desktop */
+      height: 200px;
+      border-radius: 10px;
+      object-fit: cover;
+      display: block; /* Ensure images are block elements */
+    }
+
+    h2 {
+      font-size: 20px;
+      color: #12d640;
+      margin-bottom: 10px;
+    }
+
+    .project-buttons {
+      margin-bottom: 10px;
+    }
+
+    .project-buttons a {
+      margin-right: 10px;
+      padding: 8px 18px;
+      font-size: 14px;
+      border-radius: 25px;
+      background-color: #12d640;
+      color: white;
+      text-decoration: none;
+      font-weight: 500;
+      transition: background 0.3s;
+    }
+
+    .project-buttons a:hover {
+      background-color: #0fa14d;
+    }
+
+    ul {
+      padding-left: 18px;
+      font-size: 13px;
+      margin-bottom: 10px;
+    }
+
+    p {
+      font-size: 13px;
+      margin-bottom: 6px;
+    }
+
+    /* Mobile-specific styles */
+    @media (max-width: 768px) {
+      .container-box {
+        width: 98%;
+        padding: 10px;
+      }
+
+      .image-carousel {
+        gap: 8px;
+      }
+
+      .carousel-image {
+        width: calc(90vw - 20px); /* Fit to viewport with padding */
+        max-width: none; /* Remove max-width constraint */
+        height: 150px; /* Smaller height for mobile */
+      }
+
+      h2 {
+        font-size: 18px;
+      }
+
+      .project-buttons a {
+        font-size: 12px;
+        padding: 6px 14px;
+      }
+
+      ul, p {
+        font-size: 12px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .carousel-image {
+        width: calc(95vw - 20px);
+        height: 120px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container-box">
+    <!-- Scrollable Image Carousel -->
+    <div class="image-carousel">
+      <img src="../assets/img/projectsss/crop/crop1.png" class="carousel-image" alt="Crop Prediction Screenshot 1" />
+      <img src="../assets/img/projectsss/crop/crop2.png" class="carousel-image" alt="Crop Prediction Screenshot 2" />
+      <img src="../assets/img/projectsss/crop/crop3.png" class="carousel-image" alt="Crop Prediction Screenshot 3" />
+    </div>
+
+    <!-- Title -->
+    <h2>Namma Agri - Crop Yield Prediction</h2>
+
+    <!-- Buttons -->
+    <div class="project-buttons">
+      <a href="https://github.com/YaseenBepari/Namma-Agri-crop_yield_prediction-" target="_blank">📂 GitHub</a>
+    </div>
+
+    <!-- Tech Stack -->
+    <ul>
+      <li><strong>Tech Stack</strong>: React.js, MongoDB, HTML, CSS, AWS, Machine Learning, Pandas, Scikit-Learn</li>
+    </ul>
+
+    <!-- Description -->
+    <p><strong>Namma Agri</strong> is a smart agriculture solution designed to help farmers predict crop yield based on dynamic soil and climate conditions.</p>
+    <p>Built using ML regression models, it helps optimize agricultural productivity and resource planning.</p>
+    <p>Integrated with Flask for deployment, and tested for scalability and reliability using real-time datasets.</p>
+  </div>
+</body>
+</html>

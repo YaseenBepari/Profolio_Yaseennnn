@@ -19,10 +19,10 @@
       padding-top: 70px; /* Space for nav */
     }
 
-    /* Transparent, right-aligned nav */
+    /* Responsive, right-aligned nav */
     .nav-menu {
       background: transparent;
-      padding: 15px 30px;
+      padding: 10px 20px;
       position: fixed;
       top: 0;
       right: 0;
@@ -34,27 +34,46 @@
       list-style: none;
       display: flex;
       justify-content: flex-end;
+      flex-wrap: wrap;
       margin: 0;
       padding: 0;
     }
 
     .nav-menu ul li {
-      margin-left: 20px;
+      margin-left: 10px;
+      margin-bottom: 5px;
     }
 
     .nav-menu ul li a {
-      color: #fff; /* White text */
+      color: #fff;
       text-decoration: none;
-      font-weight: bold;
-      padding: 6px 12px;
-      border-radius: 8px;
+      font-weight: 600;
+      padding: 6px 10px;
+      border-radius: 6px;
       transition: all 0.3s ease;
+      white-space: nowrap;
     }
 
     .nav-menu ul li a:hover,
     .nav-menu ul li a:focus {
       background-color: #00ff88;
       color: #000;
+    }
+
+    @media (max-width: 768px) {
+      .nav-menu {
+        padding: 6px 12px;
+      }
+
+      .nav-menu ul li {
+        margin-left: 4px;
+        margin-bottom: 4px;
+      }
+
+      .nav-menu ul li a {
+        font-size: 13px;
+        padding: 4px 6px;
+      }
     }
 
     .section-title {
@@ -159,7 +178,6 @@
       left: -100px;
     }
 
-    /* Footer */
     .footer {
       text-align: center;
       padding: 30px 20px;
@@ -192,7 +210,7 @@
 <body>
 
   <!-- Navigation Menu -->
-  <nav class="nav-menu d-none d-lg-block">
+  <nav class="nav-menu">
     <ul>
       <li class="active"><a href="index.html"><span>Home</span></a></li>
       <li><a href="aboutme.html"><span>About</span></a></li>
@@ -200,7 +218,7 @@
       <li><a href="exprince.html"><span>Experience</span></a></li>
       <li><a href="project.html"><span>Projects</span></a></li>
       <li><a href="skill.html"><span>Skills</span></a></li>
-      <li><a href="https://drive.google.com/file/d/1pT-Nk6AxY9ZOWBizuDb4htA3IiUF_fSe/view?usp=sharing" target="_blank"><span>Resume</span></a></li>
+      <li><a href="https://drive.google.com/file/d/1aW9PAiZ1toVuc-cbSW72Z4ndgY9Hur5a/view?usp=sharing" target="_blank"><span>Resume</span></a></li>
       <li><a href="contact.html"><span>Contact</span></a></li>
     </ul>
   </nav>
@@ -213,19 +231,19 @@
       </div>
       <div class="timeline">
         <div class="timeline-item">
-          <div class="timeline-date">Apr 20XX</div>
+          <div class="timeline-date">Apr 2018</div>
           <div class="timeline-content">
             <h4>High School</h4>
-            <p>ABC School, City</p>
-            <p>Marks - 95%</p>
+            <p>Lamington Boys high School, City</p>
+            <p>Marks - 75%</p>
           </div>
         </div>
         <div class="timeline-item">
-          <div class="timeline-date">Jun 20XX - Jun 20YY</div>
+          <div class="timeline-date">Jun 2021 - May 2025</div>
           <div class="timeline-content">
             <h4>B.E, Computer Science</h4>
-            <p>XYZ University, City</p>
-            <p>CGPA - 9.5</p>
+            <p>VTU University, City</p>
+            <p>CGPA - 9.1</p>
           </div>
         </div>
       </div>

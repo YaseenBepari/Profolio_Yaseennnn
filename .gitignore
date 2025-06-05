@@ -1,1 +1,34 @@
 .idea
+# Node modules
+node_modules/
+
+# Logs
+logs/
+*.log
+npm-debug.log*
+
+# Environment variable files (local secrets)
+.env
+.env.local
+.env.production
+
+# Build output folders
+dist/
+build/
+
+# macOS files
+.DS_Store
+
+# Git folder/files you don’t want to track
+.gitignore
+
+# Large or generated assets to exclude from GitHub
+
+# Archives, backups, design files, videos (usually not part of code repo)
+*.zip
+*.rar
+*.psd
+*.ai
+*.bak
+*.mp4
+*.mov

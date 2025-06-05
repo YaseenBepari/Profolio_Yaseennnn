@@ -25,7 +25,7 @@
   <meta content="Personal portfolio showcasing professional experience as a software engineer, backend developer, and research intern." name="description">
   <meta content="software engineer, backend developer, research intern, Arizona State University, Augmenify, Epitome Corporation, Meditab Software, ISRO, portfolio, experience" name="keywords">
 
-  <title>Personal Portfolio - Experience</title>
+  <title>Personal Portfolio - Projects</title>
   <link rel="icon" type="image/png" href="/favicon.png" />
 
   <!-- Google Fonts -->
@@ -59,26 +59,72 @@
       list-style: none;
       display: flex;
       justify-content: flex-end;
+      flex-wrap: wrap;
       margin: 0;
       padding: 0;
     }
 
     .nav-menu ul li {
-      margin-left: 20px;
+      margin-left: 10px;
     }
 
     .nav-menu ul li a {
       color: #fff;
       text-decoration: none;
       font-weight: 600;
-      padding: 6px 12px;
+      padding: 6px 10px;
       border-radius: 6px;
       transition: 0.3s;
+      white-space: nowrap;
     }
 
     .nav-menu ul li a:hover {
       background-color: #00ff88;
       color: #000;
+    }
+
+    @media (max-width: 768px) {
+      .nav-menu {
+        padding: 6px 12px;
+      }
+
+      .nav-menu ul {
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+
+      .nav-menu ul li {
+        margin-left: 8px;
+        margin-right: 8px;
+        margin-bottom: 5px;
+      }
+
+      .nav-menu ul li a {
+        font-size: 0.85em;
+        padding: 4px 8px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .nav-menu {
+        padding: 6px 12px;
+      }
+
+      .nav-menu ul {
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+
+      .nav-menu ul li {
+        margin-left: 5px;
+        margin-right: 5px;
+        margin-bottom: 4px;
+      }
+
+      .nav-menu ul li a {
+        font-size: 0.75em;
+        padding: 3px 6px;
+      }
     }
 
     .footer {
@@ -138,7 +184,7 @@
       <li><a href="exprince.html">Experience</a></li>
       <li><a href="project.html">Projects</a></li>
       <li><a href="skill.html">Skills</a></li>
-      <li><a href="https://drive.google.com/file/d/1pT-Nk6AxY9ZOWBizuDb4htA3IiUF_fSe/view?usp=sharing" target="_blank">Resume</a></li>
+      <li><a href="https://drive.google.com/file/d/1aW9PAiZ1toVuc-cbSW72Z4ndgY9Hur5a/view?usp=sharing" target="_blank">Resume</a></li>
       <li><a href="contact.html">Contact</a></li>
     </ul>
   </nav>
@@ -162,7 +208,6 @@
 
       <div class="row portfolio-container">
    
-       
         <div class="col-lg-4 col-md-6 portfolio-item filter-app">
           <center><h4>AI-Chatbot </h4></center>
           <div class="portfolio-wrap">
@@ -228,7 +273,6 @@
         </div>
 
         <div class="col-lg-4 col-md-6 portfolio-item filter-project">
-          <!-- <br> -->
           <center><h4>CollegeERP-System </h4></center>
           <div class="portfolio-wrap">
             <img src="assets/img/project/resume.jpg" class="img-fluid" alt="">
@@ -266,7 +310,6 @@
           </div>
         </div>
         <div class="col-lg-4 col-md-6 portfolio-item filter-project">
-          <!-- <br> -->
           <center><h4>SnakecodeJS </h4></center>
           <div class="portfolio-wrap">
             <img src="assets/img/project/snake.png" class="img-fluid" alt="">
@@ -290,7 +333,6 @@
           </div>
         </div>
         <div class="col-lg-4 col-md-6 portfolio-item filter-project">
-          <!-- <br> -->
           <center><h4>Wrangler - Data Preprocessing Tool </h4></center>
           <div class="portfolio-wrap">
             <img src="assets/img/project/twitteranalysis.jpg" class="img-fluid" alt="">
@@ -302,7 +344,6 @@
           </div>
         </div>
         <div class="col-lg-4 col-md-6 portfolio-item filter-project">
-          <!-- <br> -->
           <center><h4>N-Queens Puzzle </h4></center>
           <div class="portfolio-wrap">
             <img src="assets/img/project/iras.jpeg" class="img-fluid" alt="">

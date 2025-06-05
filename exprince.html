@@ -26,7 +26,7 @@
   <meta content="software engineer, backend developer, research intern, Arizona State University, Augmenify, Epitome Corporation, Meditab Software, ISRO, portfolio, experience" name="keywords">
 
   <title>Personal Portfolio - Experience</title>
-  <link rel="icon" type="image/png" href="/favicon.png" />
+ <link rel="icon" type="image/png" href="/favicon.png" />
 
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
@@ -59,26 +59,44 @@
       list-style: none;
       display: flex;
       justify-content: flex-end;
+      flex-wrap: wrap;
       margin: 0;
       padding: 0;
     }
 
     .nav-menu ul li {
-      margin-left: 20px;
+      margin-left: 10px;
     }
 
     .nav-menu ul li a {
       color: #fff;
       text-decoration: none;
       font-weight: 600;
-      padding: 6px 12px;
+      padding: 6px 10px;
       border-radius: 6px;
       transition: 0.3s;
+      white-space: nowrap;
     }
 
     .nav-menu ul li a:hover {
       background-color: #00ff88;
       color: #000;
+    }
+
+    @media (max-width: 768px) {
+      .nav-menu {
+        padding: 6px 12px;
+      }
+
+      .nav-menu ul li {
+        margin-left: 4px;
+        margin-bottom: 6px;
+      }
+
+      .nav-menu ul li a {
+        font-size: 13px;
+        padding: 4px 6px;
+      }
     }
 
     .footer {
@@ -138,7 +156,7 @@
       <li><a href="exprince.html">Experience</a></li>
       <li><a href="project.html">Projects</a></li>
       <li><a href="skill.html">Skills</a></li>
-      <li><a href="https://drive.google.com/file/d/1pT-Nk6AxY9ZOWBizuDb4htA3IiUF_fSe/view?usp=sharing" target="_blank">Resume</a></li>
+      <li><a href="https://drive.google.com/file/d/1aW9PAiZ1toVuc-cbSW72Z4ndgY9Hur5a/view?usp=sharing" target="_blank">Resume</a></li>
       <li><a href="contact.html">Contact</a></li>
     </ul>
   </nav>

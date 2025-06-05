@@ -1,0 +1,26 @@
+# macOS system files
+.DS_Store
+
+# Git files/folders (not needed in deployment)
+.git
+.gitignore
+
+# Ignore large or unused folders/files in deployment
+
+
+# If you have large images you want to exclude, add here:
+# assets/img/large-or-unused/
+
+# Ignore archives, backups, design files, videos
+*.zip
+*.rar
+*.psd
+*.ai
+*.bak
+*.mp4
+*.mov
+
+# Node or build artifacts (if any)
+node_modules/
+build/
+dist/

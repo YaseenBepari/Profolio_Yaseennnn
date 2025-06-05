@@ -6,15 +6,12 @@
   <title>AGRATA 2K25</title>
 
   <!-- Google Fonts -->
-     <!-- Google Fonts -->
-   <meta content="" name="keywords">
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Poppins:400,500,600&display=swap" rel="stylesheet" />
 
   <!-- Favicons -->
   <link href="../assets/img/favicon.png" rel="icon">
   <link href="../assets/img/apple-touch-icon.png" rel="apple-touch-icon">
-
-  <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
 
   <!-- Vendor CSS Files -->
   <link href="../assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -27,26 +24,17 @@
   <!-- Template Main CSS File -->
   <link href="../assets/css/style.css" rel="stylesheet">
 
-  <!-- =======================================================
-  * Template Name: Personal - v2.2.0
-  * Template URL: https://bootstrapmade.com/personal-free-resume-bootstrap-template/
-  * Author: BootstrapMade.com
-  * License: https://bootstrapmade.com/license/
-  ======================================================== -->
-  <link href="https://fonts.googleapis.com/css?family=Poppins:400,500,600&display=swap" rel="stylesheet" />
-  <link href="../assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
-
   <style>
     body {
-      font-family: 'Poppins', sans-serif;
+      font-family: 'Poppins', 'Open Sans', 'Arial', sans-serif; /* Added fallback fonts */
       margin: 0;
       padding: 0;
-      height: 100vh;
-      overflow: hidden;
+      min-height: 100vh; /* Changed to min-height for content flow */
       background: #f4f6f8;
       display: flex;
       align-items: center;
       justify-content: center;
+      color: #333; /* Ensure text contrast */
     }
 
     .container-box {
@@ -56,6 +44,7 @@
       width: 100%;
       border-radius: 15px;
       box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+      overflow-y: auto; /* Allow scrolling for text content */
     }
 
     .image-carousel {
@@ -78,7 +67,7 @@
 
     .carousel-image {
       flex: 0 0 auto;
-      height: 200px;
+      max-height: 200px;
       width: 100%;
       max-width: 280px;
       border-radius: 10px;
@@ -113,13 +102,58 @@
 
     ul {
       padding-left: 18px;
-      font-size: 13px;
+      font-size: 14px; /* Increased for readability */
       margin-bottom: 10px;
+      color: #333; /* Ensure text visibility */
     }
 
     p {
-      font-size: 13px;
+      font-size: 14px; /* Increased for readability */
       margin-bottom: 6px;
+      color: #333; /* Ensure text visibility */
+    }
+
+    /* Responsive adjustments for mobile */
+    @media (max-width: 768px) {
+      .carousel-image {
+        max-height: 150px;
+        max-width: 200px;
+      }
+
+      .container-box {
+        padding: 15px;
+        margin: 10px;
+        max-height: 80vh; /* Limit height to fit screen */
+        overflow-y: auto; /* Ensure text is scrollable */
+      }
+
+      h2 {
+        font-size: 18px; /* Slightly smaller for mobile */
+      }
+
+      ul, p {
+        font-size: 13px; /* Adjusted for mobile readability */
+      }
+    }
+
+    @media (max-width: 480px) {
+      .carousel-image {
+        max-height: 120px;
+        max-width: 160px;
+      }
+
+      .container-box {
+        padding: 10px;
+        margin: 5px;
+      }
+
+      h2 {
+        font-size: 16px;
+      }
+
+      ul, p {
+        font-size: 12px;
+      }
     }
   </style>
 </head>
@@ -139,7 +173,7 @@
     <!-- Buttons -->
     <div class="project-buttons">
       <a href="https://agratha-2025.netlify.app/" target="_blank">🌟 Event Website</a>
-      <a href="https://github.com/YaseenBepari" target="_blank">📂 Organizer GitHub</a>
+      <a href="https://github.com/YaseenBepari" target="_blank">📂 GitHub</a>
     </div>
 
     <!-- Tech Stack (optional) -->
@@ -154,8 +188,9 @@
     <p>Interactive segments such as <strong>Treasure Hunts</strong>, <strong>Model United Nations (MUN)</strong>, and a high-energy <strong>Coding Carnival</strong> engage a diverse student audience.</p>
     <p>AGRATA 2K25 promises a dynamic atmosphere, unforgettable memories, and a platform to showcase the best of brains and vibes.</p>
   </div>
-</body>
- <script async="" src="//www.google-analytics.com/analytics.js"></script><script src="assets/vendor/jquery/jquery.min.js"></script>
+
+  <!-- Vendor JS Files -->
+  <script src="../assets/vendor/jquery/jquery.min.js"></script>
   <script src="../assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
   <script src="../assets/vendor/jquery.easing/jquery.easing.min.js"></script>
   <script src="../assets/vendor/php-email-form/validate.js"></script>
@@ -168,5 +203,18 @@
   <!-- Template Main JS File -->
   <script src="../assets/js/main.js"></script>
 
-  <script>if( window.self == window.top ) { (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){ (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o), m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m) })(window,document,'script','//www.google-analytics.com/analytics.js','ga'); ga('create', 'UA-55234356-4', 'auto'); ga('send', 'pageview'); } </script>
+  <!-- Google Analytics -->
+  <script>
+    if (window.self == window.top) {
+      (function(i,s,o,g,r,a,m){
+        i['GoogleAnalyticsObject']=r;
+        i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();
+        a=s.createElement(o),m=s.getElementsByTagName(o)[0];
+        a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+      ga('create', 'UA-55234356-4', 'auto');
+      ga('send', 'pageview');
+    }
+  </script>
+</body>
 </html>

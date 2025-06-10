@@ -1,0 +1,930 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Page</title>
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', 'Arial', sans-serif;
+        }
+
+        body {
+            background: linear-gradient(180deg, #0a0a23 0%, #1a1a3a 100%);
+            overflow-x: hidden;
+        }
+
+        /* Navigation Menu Styles */
+        .nav-menu {
+            position: fixed;
+            top: 0;
+            right: 0;
+            width: 100%;
+            z-index: 1000;
+            background: transparent;
+            padding: 10px 30px;
+        }
+
+        .nav-menu ul {
+            list-style: none;
+            display: flex;
+            justify-content: flex-end;
+            margin: 0;
+            padding: 0;
+        }
+
+        .nav-menu ul li {
+            margin-left: 20px;
+        }
+
+        .nav-menu ul li a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: 600;
+            padding: 6px 12px;
+            border-radius: 6px;
+            transition: 0.3s;
+        }
+
+        .nav-menu ul li a:hover {
+            background-color: #00ff88;
+            color: #000;
+        }
+
+        /* Achievements & Certificates Styles */
+        #achievements-certificates {
+            padding: 60px 20px;
+            position: relative;
+            overflow: hidden;
+            color: #fff;
+            background: linear-gradient(135deg, #1c2526, #2d3839, #0f1414, #252b2b);
+            background-size: 400% 400%;
+            animation: gradient 10s ease infinite;
+            backdrop-filter: blur(5px);
+        }
+
+        #achievements-certificates .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        #achievements-certificates .scroll-container {
+            display: flex;
+            overflow-x: auto;
+            gap: 35px;
+            padding-bottom: 20px;
+            scrollbar-width: thin;
+            scrollbar-color: #ffffff80 #ffffff20;
+        }
+
+        #achievements-certificates .scroll-container::-webkit-scrollbar {
+            height: 10px;
+        }
+
+        #achievements-certificates .scroll-container::-webkit-scrollbar-thumb {
+            background: #ffffff80;
+            border-radius: 5px;
+        }
+
+        #achievements-certificates .scroll-container::-webkit-scrollbar-track {
+            background: #ffffff20;
+        }
+
+        #achievements-certificates .achievements-container .card {
+            flex: 0 0 auto;
+            width: 350px;
+            text-align: center;
+            background: rgba(255, 255, 255, 0.15);
+            border-radius: 16px;
+            padding: 20px;
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+            transition: transform 0.5s ease, box-shadow 0.5s ease, border 0.5s ease, z-index 0.5s ease, filter 0.5s ease;
+            border: 3px solid transparent;
+            position: relative;
+            overflow: visible;
+            z-index: 1;
+            cursor: pointer;
+        }
+
+        #achievements-certificates .achievements-container .card img {
+            width: 100%;
+            height: 310px;
+            object-fit: cover;
+            border-radius: 10px;
+            display: block;
+            transition: transform 0.5s ease;
+        }
+
+        #achievements-certificates .certificates-container {
+            padding: 20px 20px;
+        }
+
+        #achievements-certificates .certificates-container .card {
+            flex: 0 0 auto;
+            width: 300px;
+            text-align: center;
+            background: rgba(255, 255, 255, 0.15);
+            border-radius: 16px;
+            padding: 20px;
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+            transition: transform 0.5s ease, box-shadow 0.5s ease, border 0.5s ease, z-index 0.5s ease, filter 0.5s ease;
+            border: 3px solid transparent;
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+            cursor: pointer;
+        }
+
+        #achievements-certificates .certificates-container .card img {
+            width: 100%;
+            height: 250px;
+            object-fit: contain;
+            border-radius: 10px;
+            display: block;
+            transition: transform 0.5s ease;
+        }
+
+        #achievements-certificates .card:hover, #achievements-certificates .card:focus {
+            transform: scale(1.05) translateY(-5px) rotateX(2deg) rotateY(2deg);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.5);
+            border: 3px solid #ffffff;
+            z-index: 10;
+            animation: glow 1s ease-in-out infinite alternate;
+            filter: brightness(1.1);
+        }
+
+        #achievements-certificates .card:hover img, #achievements-certificates .card:focus img {
+            transform: scale(1.1);
+        }
+
+        #achievements-certificates .card p {
+            margin-top: 12px;
+            font-weight: 600;
+            color: #fff;
+            font-size: 1.3em;
+            transition: color 0.5s ease;
+        }
+
+        #achievements-certificates .card:hover p, #achievements-certificates .card:focus p {
+            color: #f0f0f0;
+        }
+
+        @keyframes glow {
+            0% {
+                border-color: #00ffcc;
+                box-shadow: 0 20px 50px rgba(0, 255, 204, 0.5), 0 0 30px rgba(0, 255, 204, 0.7);
+            }
+            50% {
+                border-color: #ff66cc;
+                box-shadow: 0 20px 50px rgba(255, 102, 204, 0.5), 0 0 30px rgba(255, 102, 204, 0.7);
+            }
+            100% {
+                border-color: #66ccff;
+                box-shadow: 0 20px 50px rgba(102, 204, 255, 0.5), 0 0 30px rgba(102, 204, 255, 0.7);
+            }
+        }
+
+        @keyframes gradient {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        #achievements-certificates #particle-canvas {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            opacity: 0.6;
+        }
+
+        /* Contact Section Styles */
+        .contact {
+            position: relative;
+            min-height: 80vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 40px 15px;
+            overflow: hidden;
+        }
+
+        .contact::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 800"%3E%3Cfilter id="a"%3E%3CfeTurbulence type="fractalNoise" baseFrequency=".03" numOctaves="4" stitchTiles="stitch"/%3E%3C/filter%3E%3Crect width="100%25" height="100%25" filter="url(%23a)" opacity=".1"/%3E%3C/svg%3E');
+            opacity: 0.3;
+            z-index: 1;
+            animation: particleShift 25s linear infinite;
+        }
+
+        @keyframes particleShift {
+            0% { transform: translateY(0); }
+            100% { transform: translateY(-100px); }
+        }
+
+        .contact-us-title {
+            font-size: 2.5em;
+            font-weight: 800;
+            text-align: center;
+            margin-bottom: 20px;
+            background: linear-gradient(90deg, #00f7ff, #f5c518);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-shadow: 0 0 10px rgba(0, 247, 255, 0.7);
+            animation: glow 2s ease-in-out infinite alternate;
+            z-index: 2;
+        }
+
+        @keyframes glow {
+            0% { text-shadow: 0 0 8px rgba(0, 247, 255, 0.5), 0 0 15px rgba(245, 197, 24, 0.5); }
+            100% { text-shadow: 0 0 12px rgba(0, 247, 255, 0.8), 0 0 20px rgba(245, 197, 24, 0.8); }
+        }
+
+        .contact .container {
+            max-width: 900px;
+            margin: 0 auto;
+            z-index: 2;
+        }
+
+        .contact .contact-section {
+            display: flex;
+            justify-content: space-between;
+            background: rgba(255, 255, 255, 0.08);
+            backdrop-filter: blur(10px);
+            border-radius: 15px;
+            border: 1px solid rgba(0, 247, 255, 0.3);
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.4);
+            overflow: hidden;
+            transition: transform 0.4s ease, box-shadow 0.4s ease;
+        }
+
+        .contact .contact-section:hover {
+            transform: scale(1.01);
+            box-shadow: 0 10px 40px rgba(0, 247, 255, 0.3);
+        }
+
+        .contact .contact-info {
+            flex: 1;
+            padding: 30px;
+            color: #fff;
+        }
+
+        .contact .contact-info h2 {
+            font-size: 1.8em;
+            margin-bottom: 20px;
+            text-align: center;
+            font-weight: 700;
+            color: #e0e0e0;
+        }
+
+        .contact .contact-info h2 span {
+            color: #f5c518;
+        }
+
+        .contact .contact-info p {
+            margin: 15px 0;
+            font-size: 1em;
+            line-height: 1.6;
+            color: #e0e0e0;
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .contact .contact-info p i {
+            margin-right: 10px;
+            font-size: 1.2em;
+            color: #00f7ff;
+            transition: transform 0.3s ease;
+        }
+
+        .contact .contact-info p i:hover {
+            transform: scale(1.15);
+        }
+
+        .contact .social-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 15px;
+            justify-content: center;
+        }
+
+        .contact .social-links a {
+            font-size: 1.5em;
+            color: #fff;
+            transition: all 0.3s ease;
+            text-shadow: 0 0 8px rgba(0, 247, 255, 0.6);
+            position: relative;
+        }
+
+        .contact .social-links a::before {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            border: 1px solid #00f7ff;
+            opacity: 0;
+            transition: all 0.3s ease;
+            transform: scale(0);
+        }
+
+        .contact .social-links a:hover::before {
+            opacity: 0.5;
+            transform: scale(1.3);
+        }
+
+        .contact .social-links a:hover {
+            color: #f5c518;
+            transform: translateY(-3px);
+            text-shadow: 0 0 15px rgba(245, 197, 24, 0.9);
+        }
+
+        .contact .contact-form {
+            flex: 1;
+            padding: 30px;
+            background: rgba(255, 255, 255, 0.05);
+        }
+
+        .contact .contact-form form {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .contact .contact-form input,
+        .contact .contact-form textarea {
+            width: 100%;
+            padding: 10px;
+            border: none;
+            border-radius: 8px;
+            font-size: 0.95em;
+            color: #fff;
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            transition: all 0.3s ease;
+        }
+
+        .contact .contact-form input:focus,
+        .contact .contact-form textarea:focus {
+            border-color: #f5c518;
+            box-shadow: 0 0 10px rgba(245, 197, 24, 0.6);
+            background: rgba(255, 255, 255, 0.2);
+            outline: none;
+        }
+
+        .contact .contact-form input::placeholder,
+        .contact .contact-form textarea::placeholder {
+            color: #ccc;
+            transition: all 0.3s ease;
+        }
+
+        .contact .contact-form input:focus::placeholder,
+        .contact .contact-form textarea:focus::placeholder {
+            opacity: 0;
+            transform: translateY(-8px);
+        }
+
+        .contact .contact-form textarea {
+            height: 120px;
+            resize: none;
+        }
+
+        .contact .contact-form button {
+            background: linear-gradient(90deg, #00f7ff, #f5c518);
+            color: #0a0a23;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 0.95em;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+            box-shadow: 0 0 12px rgba(0, 247, 255, 0.6);
+        }
+
+        .contact .contact-form button:hover {
+            transform: scale(1.03);
+            box-shadow: 0 0 20px rgba(245, 197, 24, 0.8);
+            animation: pulse 1.2s infinite;
+        }
+
+        @keyframes pulse {
+            0% { box-shadow: 0 0 12px rgba(0, 247, 255, 0.6); }
+            50% { box-shadow: 0 0 20px rgba(245, 197, 24, 0.9); }
+            100% { box-shadow: 0 0 12px rgba(0, 247, 255, 0.6); }
+        }
+
+        .contact .contact-form button::before {
+            content: "🚀";
+            margin-right: 6px;
+        }
+
+        .footer {
+            background: #0a0a23;
+            color: #fff;
+            text-align: center;
+            padding: 20px 15px;
+            width: 100%;
+            position: relative;
+            z-index: 2;
+            overflow: hidden;
+        }
+
+        .footer::before {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 60px;
+            background: url('data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"%3E%3Cpath fill="%2300f7ff" fill-opacity="0.3" d="M0,160L48,144C96,128,192,96,288,112C384,128,480,192,576,192C672,192,768,128,864,112C960,96,1056,128,1152,144C1248,160,1344,160,1392,160L1440,160L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"%3E%3C/path%3E%3C/svg%3E');
+            animation: wave 10s linear infinite;
+        }
+
+        @keyframes wave {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-1440px); }
+        }
+
+        .footer h3 {
+            font-size: 1.5em;
+            margin-bottom: 10px;
+            font-weight: 700;
+            background: linear-gradient(90deg, #00f7ff, #f5c518);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .footer .social-icons {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-bottom: 10px;
+        }
+
+        .footer .social-icons a {
+            font-size: 1.5em;
+            color: #fff;
+            transition: all 0.3s ease;
+            text-shadow: 0 0 8px rgba(0, 247, 255, 0.6);
+        }
+
+        .footer .social-icons a:hover {
+            color: #f5c518;
+            transform: rotate(360deg);
+            text-shadow: 0 0 15px rgba(245, 197, 24, 0.9);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            /* Achievements Section */
+            #achievements-certificates .certificates-container .card {
+                width: 250px;
+            }
+            #achievements-certificates .certificates-container .card img {
+                height: 200px;
+            }
+
+            /* Contact Section */
+            .contact {
+                padding: 40px 15px;
+            }
+
+            .contact .contact-us-title {
+                font-size: 2em;
+                margin-bottom: 20px;
+            }
+
+            .contact .container {
+                max-width: 100%;
+                padding: 0 10px;
+            }
+
+            .contact .contact-section {
+                flex-direction: column;
+                border-radius: 15px;
+            }
+
+            .contact .contact-info,
+            .contact .contact-form {
+                padding: 25px;
+            }
+
+            .contact .contact-info h2 {
+                font-size: 1.5em;
+                margin-bottom: 15px;
+            }
+
+            .contact .contact-info p {
+                font-size: 0.9em;
+                line-height: 1.5;
+            }
+
+            .contact .contact-info p i {
+                font-size: 1.2em;
+                margin-right: 8px;
+            }
+
+            .contact .social-links {
+                gap: 15px;
+            }
+
+            .contact .social-links a {
+                font-size: 1.4em;
+            }
+
+            .contact .contact-form input,
+            .contact .contact-form textarea {
+                padding: 8px;
+                font-size: 0.85em;
+                border-radius: 8px;
+            }
+
+            .contact .contact-form textarea {
+                height: 100px;
+            }
+
+            .contact .contact-form button {
+                padding: 8px 15px;
+                font-size: 0.85em;
+            }
+
+            .footer {
+                padding: 20px 15px;
+            }
+
+            .footer h3 {
+                font-size: 1.4em;
+                margin-bottom: 10px;
+            }
+
+            .footer .social-icons {
+                gap: 15px;
+            }
+
+            .footer .social-icons a {
+                font-size: 1.4em;
+            }
+
+            .footer p {
+                font-size: 0.8em;
+            }
+
+            .footer::before {
+                height: 60px;
+            }
+
+            .nav-menu ul {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            .nav-menu ul li {
+                margin-left: 8px;
+                margin-right: 8px;
+                margin-bottom: 5px;
+            }
+
+            .nav-menu ul li a {
+                font-size: 0.85em;
+                padding: 4px 8px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            /* Achievements Section */
+            #achievements-certificates .certificates-container .card {
+                width: 200px;
+            }
+            #achievements-certificates .certificates-container .card img {
+                height: 150px;
+            }
+
+            /* Contact Section */
+            .contact {
+                padding: 30px 10px;
+            }
+
+            .contact .contact-us-title {
+                font-size: 1.5em;
+                margin-bottom: 15px;
+            }
+
+            .contact .container {
+                padding: 0 5px;
+            }
+
+            .contact .contact-section {
+                border-radius: 10px;
+            }
+
+            .contact .contact-info,
+            .contact .contact-form {
+                padding: 15px;
+            }
+
+            .contact .contact-info h2 {
+                font-size: 1.2em;
+                margin-bottom: 10px;
+            }
+
+            .contact .contact-info p {
+                font-size: 0.8em;
+                line-height: 1.4;
+            }
+
+            .contact .contact-info p i {
+                font-size: 1em;
+                margin-right: 6px;
+            }
+
+            .contact .social-links {
+                gap: 10px;
+            }
+
+            .contact .social-links a {
+                font-size: 1.2em;
+            }
+
+            .contact .contact-form input,
+            .contact .contact-form textarea {
+                padding: 6px;
+                font-size: 0.75em;
+                border-radius: 6px;
+            }
+
+            .contact .contact-form textarea {
+                height: 80px;
+            }
+
+            .contact .contact-form button {
+                padding: 6px 12px;
+                font-size: 0.75em;
+            }
+
+            .footer {
+                padding: 15px 10px;
+            }
+
+            .footer h3 {
+                font-size: 1.2em;
+            }
+
+            .footer .social-icons {
+                gap: 10px;
+            }
+
+            .footer .social-icons a {
+                font-size: 1.2em;
+            }
+
+            .footer p {
+                font-size: 0.7em;
+            }
+
+            .footer::before {
+                height: 50px;
+            }
+
+            .nav-menu ul {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            .nav-menu ul li {
+                margin-left: 5px;
+                margin-right: 5px;
+                margin-bottom: 4px;
+            }
+
+            .nav-menu ul li a {
+                font-size: 0.75em;
+                padding: 3px 6px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation Menu -->
+    <nav class="nav-menu">
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="aboutme.html">About</a></li>
+            <li><a href="eduction.html">Education</a></li>
+            <li><a href="exprince.html">Experience</a></li>
+            <li><a href="project.html">Projects</a></li>
+            <li><a href="skill.html">Skills</a></li>
+            <li><a href="https://drive.google.com/file/d/1aW9PAiZ1toVuc-cbSW72Z4ndgY9Hur5a/view?usp=sharing" target="_blank">Resume</a></li>
+           <li><a href="achiment.html"><span>Achievement</span></a></li>
+        </ul>
+    </nav>
+
+    <!-- Achievements & Certificates Section -->
+    <section id="achievements-certificates">
+        <div class="container">
+            <h2 style="text-align: center; font-size: 2.8em; margin-bottom: 40px; text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.3); letter-spacing: 1px;">🏅 Achievements & Certificates</h2>
+
+            <!-- Achievements -->
+            <h3 style="font-size: 2em; color: #fff; text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.3);">🚀 Achievements</h3>
+            <div class="scroll-container achievements-container">
+                <div class="card" tabindex="0">
+                    <img src="assets/img/achivmrnts/winner srsti.png" alt="Srishti Winner">
+                    <p>Winner at Srishti - Innovation Exchange</p>
+                </div>
+                <div class="card" tabindex="0">
+                    <img src="assets/img/achivmrnts/winners hackton.png" alt="IdeaHub Winner">
+                    <p>Winners of IdeaHub 2.0 Hackathon</p>
+                </div>
+                <div class="card" tabindex="0">
+                    <img src="assets/img/achivmrnts/merit nukeri.png" alt="Merit Certificate">
+                    <p>Merit Certificate in Young Turks Skill Contest</p>
+                </div>
+                <div class="card" tabindex="0">
+                    <img src="assets/img/achivmrnts/project.png" alt="Project Exhibition">
+                    <p>Winner of Project Exhibition - Tech Fest</p>
+                </div>
+                <div class="card" tabindex="0">
+                    <img src="assets/img/achivmrnts/google devfest.png" alt="DevFest">
+                    <p>Participated in Google DevFest</p>
+                </div>
+            </div>
+
+            <!-- Certificates -->
+            <h3 style="font-size: 2em; color: #fff; margin-top: 40px; text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.3);">📜 Certificates</h3>
+            <div class="scroll-container certificates-container">
+                <div class="card" tabindex="0">
+                    <img src="assets/img/achivmrnts/colud certificate.png" alt="AWS Cloud">
+                    <p>Completed Hands-on Cloud Computing with AWS</p>
+                </div>
+                <div class="card" tabindex="0">
+                    <img src="assets/img/achivmrnts/react.jpg" alt="React AWS">
+                    <p>React by AWS Training Certificate</p>
+                </div>
+                <div class="card" tabindex="0">
+                    <img src="assets/img/achivmrnts/coding ninga.png" alt="Coding Ninjas Gold Pass">
+                    <p>Gold Pass by Coding Ninjas Campus Team</p>
+                </div>
+                <div class="card" tabindex="0">
+                    <img src="assets/img/achivmrnts/aws certifcte.jpg" alt="AWS Simulation">
+                    <p>AWS Solutions Architecture Job Simulation</p>
+                </div>
+                <div class="card" tabindex="0">
+                    <img src="assets/img/achivmrnts/deliote.jpg" alt="Deloitte Simulation">
+                    <p>Deloitte Data Analytics Job Simulation</p>
+                </div>
+                <div class="card" tabindex="0">
+                    <img src="assets/img/achivmrnts/accenture.jpg" alt="Accenture">
+                    <p>Accenture Data Analytics & Visualization</p>
+                </div>
+                <div class="card" tabindex="0">
+                    <img src="assets/img/achivmrnts/IBM.png" alt="IBM Data Science">
+                    <p>IBM</p>
+                </div>
+                <div class="card" tabindex="0">
+                    <img src="assets/img/achivmrnts/wadhwni certificte_page-0001.jpg" alt="Wadhwani AI">
+                    <p>Wadhwani Foundation AI for Social Impact</p>
+                </div>
+                <div class="card" tabindex="0">
+                    <img src="assets/img/achivmrnts/Rooman Certificate_page-0001.jpg" alt="Rooman Cybersecurity">
+                    <p>Rooman Cybersecurity Essentials</p>
+                </div>
+            </div>
+
+            <!-- Canvas for Particle Effects -->
+            <canvas id="particle-canvas"></canvas>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contacts" class="contact">
+        <h1 class="contact-us-title">Contact Us</h1>
+        <div class="container">
+            <div class="contact-section">
+                <div class="contact-info">
+                    <h2>Let's Connect <span>!</span></h2>
+                    <p><i class="bx bx-map"></i>ADDRESS:<br>Hubli Karnatak</p>
+                    <p><i class="bx bx-envelope"></i>EMAIL:<br>yaseenbepari2002@gmail.com</p>
+                    <p><i class="bx bx-phone"></i>CONTACT:<br>9379549280</p>
+                    <p><i class="bx bx-share-alt"></i>SOCIAL PROFILES:<br>
+                        <div class="social-links">
+                            <a href="https://www.linkedin.com/in/yaseen-bepari-18a70725b/" target="_blank" class="linkedin"><i class="bx bxl-linkedin"></i></a>
+                            <a href="https://github.com/YaseenBepari" target="_blank" class="github"><i class="bx bxl-github"></i></a>
+                            <a href="mailto:yaseenbepari2002@gmail.com" target="_blank" class="google"><i class="bx bx-envelope"></i></a>
+                            <a href="https://leetcode.com/u/your-profile/" target="_blank" class="leetcode"><i class="bx bx-code-alt"></i></a>
+                        </div>
+                    </p>
+                </div>
+                <div class="contact-form">
+                    <form>
+                        <input type="text" placeholder="YOUR NAME" required>
+                        <input type="email" placeholder="YOUR EMAIL" required>
+                        <input type="text" placeholder="SUBJECT" required>
+                        <textarea placeholder="MESSAGE" required></textarea>
+                        <button type="submit">SEND MESSAGE</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <div class="footer">
+        <h3>Yaseen Bepari</h3>
+        <div class="social-icons">
+            <a href="https://www.linkedin.com/in/yaseen-bepari-18a70725b/" target="_blank" class="linkedin"><i class="bx bxl-linkedin"></i></a>
+            <a href="https://github.com/YaseenBepari" target="_blank" class="github"><i class="bx bxl-github"></i></a>
+            <a href="mailto:yaseenbepari2002@gmail.com" target="_blank" class="google"><i class="bx bx-envelope"></i></a>
+            <a href="https://leetcode.com/u/your-profile/" target="_blank" class="leetcode"><i class="bx bx-code-alt"></i></a>
+        </div>
+        <p>© 2025 Yaseen Bepari. All rights reserved.</p>
+    </div>
+
+    <!-- JavaScript for Particle Effects -->
+    <script>
+        const canvas = document.getElementById('particle-canvas');
+        const ctx = canvas.getContext('2d');
+        let particles = [];
+
+        function resizeCanvas() {
+            canvas.width = window.innerWidth;
+            canvas.height = document.getElementById('achievements-certificates').offsetHeight;
+        }
+
+        window.addEventListener('resize', resizeCanvas);
+        resizeCanvas();
+
+        class Particle {
+            constructor() {
+                this.x = Math.random() * canvas.width;
+                this.y = Math.random() * canvas.height;
+                this.size = Math.random() * 3 + 1;
+                this.speedX = Math.random() * 1 - 0.5;
+                this.speedY = Math.random() * 1 - 0.5;
+                const colors = [
+                    'rgba(255, 255, 255, 0.7)',
+                    'rgba(240, 240, 240, 0.6)',
+                    'rgba(250, 250, 250, 0.8)',
+                    'rgba(230, 230, 230, 0.5)',
+                    'rgba(245, 245, 245, 0.6)'
+                ];
+                this.color = colors[Math.floor(Math.random() * colors.length)];
+            }
+
+            update() {
+                this.x += this.speedX;
+                this.y += this.speedY;
+                if (this.size > 0.2) this.size -= 0.01;
+            }
+
+            draw() {
+                ctx.fillStyle = this.color;
+                ctx.beginPath();
+                ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+                ctx.fill();
+            }
+        }
+
+        function initParticles() {
+            particles = [];
+            for (let i = 0; i < 50; i++) {
+                particles.push(new Particle());
+            }
+        }
+
+        function animateParticles() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            for (let i = 0; i < particles.length; i++) {
+                particles[i].update();
+                particles[i].draw();
+                if (particles[i].size <= 0.2) {
+                    particles.splice(i, 1);
+                    i--;
+                    particles.push(new Particle());
+                }
+            }
+            requestAnimationFrame(animateParticles);
+        }
+
+        initParticles();
+        animateParticles();
+    </script>
+</body>
+</html>
